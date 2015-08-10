@@ -21,7 +21,7 @@ class Form
     }
 
 
-    public function addValidator($elementName, Zend\Validator $validator)
+    public function addValidator($elementName, \Zend\Validator\AbstractValidator $validator)
     {
         if (!isset($this->_validators[$elementName]))
             $this->_validators[$elementName] = array();
