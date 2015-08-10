@@ -19,5 +19,11 @@
     "require": {
         "zendframework/zend-validator": "dev"
     },
-    "minimum-stability" : "dev"
+    "minimum-stability" : "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        }
+    ]
 }
