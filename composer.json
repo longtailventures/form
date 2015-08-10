@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "zendframework/zend-validator": "dev-master"
+        "zendframework/zend-validator": "dev"
     },
     "minimum-stability" : "dev"
 }
