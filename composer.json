@@ -18,6 +18,6 @@
     },
     "require": {
         "zendframework/zend-validator": "dev-master"
-    }
+    },
     "minimum-stability" : "dev"
 }
