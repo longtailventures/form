@@ -11,7 +11,10 @@
         }
     ],
     "autoload": {
-        "psr-4": { "LongTailVentures\\Form\\": "src" }
+        "psr-4": { 
+            "LongTailVentures\\Form\\": "vendor/longtailventures/form/src"
+            
+        }
     },
     "minimum-stability" : "dev"
 }
