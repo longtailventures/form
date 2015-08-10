@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": { 
-            "LongTailVentures\\Form\\": "vendor/longtailventures/form/src"
+            "LongTailVentures\\Form\\": "src"
             
         }
     },
