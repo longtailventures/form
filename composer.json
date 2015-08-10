@@ -17,13 +17,7 @@
         }
     },
     "require": {
-        "zendframework/zend-validator": "dev"
+        "zendframework/zend-validator": ""
     },
-    "minimum-stability" : "dev",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.zendframework.com/"
-        }
-    ]
+    "minimum-stability" : "dev"
 }
