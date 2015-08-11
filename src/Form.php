@@ -65,7 +65,7 @@ class Form
         $areTokensEqual = $this->_values[$csrfTokenName] === $currentToken;
         if (!$areTokensEqual)
         {
-        	$this->_errors['CsrfToken'] = 'Please submit the form again (2)';
+        	$this->_errors['CsrfToken'] = 'Please submit the form again';
         	$this->_isValid = false;
         	return (bool)$this->_isValid;
         }
