@@ -58,8 +58,8 @@ class Form
         	return (bool)$this->_isValid;
         }
 
-        $currentToken = isset($_SESSION['CsrfToken'][$csrfTokenName])
-        	? $_SESSION['CsrfToken'][$csrfTokenName]
+        $currentToken = isset($_SESSION['CsrfToken'][$this->_name])
+        	? $_SESSION['CsrfToken'][$this->_name]
         	: '';
         $this->_isValid = $this->_values[$csrfTokenName] === $currentToken;
         if (!$this->_isValid);
