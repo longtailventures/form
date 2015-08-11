@@ -61,10 +61,12 @@ class Form
         $currentToken = isset($_SESSION['CsrfToken'][$this->_name])
         	? $_SESSION['CsrfToken'][$this->_name]
         	: '';
-        $this->_isValid = $this->_values[$csrfTokenName] === $currentToken;
-        if (!$this->_isValid);
+        
+        $areTokensEqual = $this->_values[$csrfTokenName] === $currentToken;
+        if (!$areTokensEqual)
         {
-        	$this->_errors['CsrfToken'] = 'Please submit the form again';
+        	$this->_errors['CsrfToken'] = 'Please submit the form again (2)';
+        	$this->_isValid = false;
         	return (bool)$this->_isValid;
         }
 
