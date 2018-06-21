@@ -37,7 +37,7 @@ class Form
     }
 
 
-    public function isValid($values = array())
+    public function isValid(array $values)
     {
         $this->_isValid = true;
 
