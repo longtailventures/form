@@ -6,6 +6,11 @@ class Form
 {
     protected $_name, $_errors, $_values, $_isValid, $_validators, $_csrfValidator;
 
+
+    /**
+     * Form constructor.
+     * @param null $name
+     */
     public function __construct($name = null)
     {
         $this->_name = empty($name)
@@ -21,6 +26,10 @@ class Form
     }
 
 
+    /**
+     * @param string $elementName
+     * @param \Zend\Validator\AbstractValidator $validator
+     */
     public function addValidator($elementName, \Zend\Validator\AbstractValidator $validator)
     {
         if (!isset($this->_validators[$elementName]))
@@ -30,6 +39,10 @@ class Form
     }
 
 
+    /**
+     * @param string $elementName
+     * @param $validatorName
+     */
     public function removeValidator($elementName, $validatorName)
     {
         if (isset($this->_validators[$elementName][$validatorName]))
@@ -37,6 +50,10 @@ class Form
     }
 
 
+    /**
+     * @param array $values
+     * @return bool $isValid
+     */
     public function isValid(array $values)
     {
         $this->_isValid = true;
@@ -103,30 +120,47 @@ class Form
     }
 
 
+    /**
+     * @param string $name
+     */
     public function setName($name)
     {
         $this->_name = $name;
     }
 
 
+    /**
+     * @return null|string
+     */
     public function getName()
     {
         return $this->_name;
     }
 
 
+    /**
+     * @param string $elementName
+     * @param string $value
+     */
     public function setValue($elementName, $value)
     {
         $this->_values[$elementName] = $value;
     }
 
 
+    /**
+     * @param array $values
+     */
     public function setValues($values)
     {
         $this->_values = $values;
     }
 
 
+    /**
+     * @param string $elementName
+     * @return mixed|string
+     */
     public function getValue($elementName)
     {
         if (array_key_exists($elementName, $this->_values))
@@ -145,6 +179,10 @@ class Form
     }
 
 
+    /**
+     * @param string $elementName
+     * @param string $error
+     */
     public function setError($elementName, $error)
     {
         $this->_errors[$elementName] = $error;
@@ -152,6 +190,10 @@ class Form
     }
 
 
+    /**
+     * @param $elementName
+     * @return mixed|string
+     */
     public function getError($elementName)
     {
         return isset($this->_errors[$elementName])
@@ -160,6 +202,9 @@ class Form
     }
 
 
+    /**
+     * @param array $errors
+     */
     public function setErrors($errors)
     {
         foreach ($errors as $elementName => $error)
@@ -169,12 +214,19 @@ class Form
     }
 
 
+    /**
+     * @return bool $hasErrors
+     */
     public function hasErrors()
     {
         return count($this->_errors) > 0;
     }
 
 
+    /**
+     * @param strint $elementName
+     * @return bool $isError
+     */
     public function isError($elementName)
     {
         return isset($this->_errors[$elementName])
@@ -183,18 +235,28 @@ class Form
     }
 
 
+    /**
+     * @return array
+     */
     public function getValues()
     {
         return $this->_values;
     }
 
 
+    /**
+     * @return array
+     */
     public function getErrors()
     {
         return $this->_errors;
     }
 
 
+    /**
+     * @param null $isCompleted
+     * @return bool|null $isCompleted
+     */
     public function isCompleted($isCompleted = null)
     {
         if ($isCompleted === null)
@@ -210,12 +272,18 @@ class Form
     }
 
 
+    /**
+     * @param string $message
+     */
     public function setCompletedMessage($message)
     {
         $_SESSION[$this->_name]['submitted_message'] = $message;
     }
 
 
+    /**
+     * @return string $message
+     */
     public function getCompletedMessage()
     {
         if (isset($_SESSION[$this->_name]['submitted_message']))
@@ -229,6 +297,9 @@ class Form
     }
 
 
+    /**
+     * @return string $csrfToken
+     */
     public function generateCsrfToken()
     {
         $csrfToken = md5($this->_name . time());
