@@ -154,7 +154,9 @@ class Form
 
     public function getError($elementName)
     {
-        return isset($this->_errors[$elementName]) ? $this->_errors[$elementName] : '';
+        return isset($this->_errors[$elementName])
+            ? $this->_errors[$elementName]
+            : '';
     }
 
 
@@ -175,7 +177,9 @@ class Form
 
     public function isError($elementName)
     {
-        return isset($this->_errors[$elementName]) ? true : false;
+        return isset($this->_errors[$elementName])
+            ? true
+            : false;
     }
 
 
