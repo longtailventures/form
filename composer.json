@@ -19,5 +19,5 @@
     "require": {
         "zendframework/zend-validator": "~2.5"
     },
-    "minimum-stability" : "dev"
+    "minimum-stability" : "master@dev"
 }
