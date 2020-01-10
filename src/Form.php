@@ -224,7 +224,7 @@ class Form
 
 
     /**
-     * @param strint $elementName
+     * @param string $elementName
      * @return bool $isError
      */
     public function isError($elementName)
